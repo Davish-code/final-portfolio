@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "error": "#ffb4ab",
+          "on-error": "#690005",
+          "outline-variant": "#534434",
+          "on-surface": "#e3e1e9",
+          "on-tertiary-fixed": "#2f1500",
+          "surface-bright": "#38393f",
+          "error-container": "#93000a",
+          "on-tertiary-fixed-variant": "#6e3900",
+          "outline": "#a08e7a",
+          "background": "#121318",
+          "primary-fixed": "#ffddb8",
+          "on-secondary-container": "#cfb67e",
+          "secondary-fixed-dim": "#dec48b",
+          "tertiary-fixed-dim": "#ffb77d",
+          "surface": "#121318",
+          "tertiary": "#ffc08e",
+          "surface-container-low": "#1a1b21",
+          "inverse-on-surface": "#2f3036",
+          "secondary": "#dec48b",
+          "surface-dim": "#121318",
+          "surface-variant": "#34343a",
+          "on-secondary-fixed": "#251a00",
+          "on-tertiary": "#4d2600",
+          "on-primary-container": "#613b00",
+          "on-error-container": "#ffdad6",
+          "primary-container": "#f59e0b",
+          "on-background": "#e3e1e9",
+          "on-secondary": "#3e2e03",
+          "on-tertiary-container": "#6a3700",
+          "inverse-primary": "#855300",
+          "surface-container-highest": "#34343a",
+          "surface-container": "#1e1f25",
+          "on-primary-fixed-variant": "#653e00",
+          "surface-container-lowest": "#0d0e13",
+          "surface-container-high": "#292a2f",
+          "tertiary-container": "#ff9837",
+          "inverse-surface": "#e3e1e9",
+          "secondary-fixed": "#fbdfa5",
+          "on-secondary-fixed-variant": "#564418",
+          "tertiary-fixed": "#ffdcc3",
+          "on-surface-variant": "#d8c3ad",
+          "on-primary-fixed": "#2a1700",
+          "secondary-container": "#59471a",
+          "primary-fixed-dim": "#ffb95f",
+          "surface-tint": "#ffb95f",
+          "on-primary": "#472a00",
+          "primary": "#ffc174"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-xs": "0.25rem",
+          "margin-desktop": "4rem",
+          "margin-tablet": "2.5rem",
+          "gutter-desktop": "1.75rem",
+          "space-xl": "2.5rem",
+          "gutter": "1.25rem",
+          "space-md": "1rem",
+          "space-lg": "1.5rem",
+          "space-3xl": "6rem",
+          "space-2xl": "4rem",
+          "margin": "1.25rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "display-hero-mobile": [
+            "Syne"
+          ],
+          "label-code": [
+            "JetBrains Mono"
+          ],
+          "label-mono-xs": [
+            "JetBrains Mono"
+          ],
+          "body-sm": [
+            "Space Grotesk"
+          ],
+          "headline-lg": [
+            "Syne"
+          ],
+          "display-hero": [
+            "Syne"
+          ],
+          "body-md": [
+            "Space Grotesk"
+          ],
+          "label-mono-sm": [
+            "JetBrains Mono"
+          ],
+          "body-lg": [
+            "Space Grotesk"
+          ],
+          "headline-xl": [
+            "Syne"
+          ],
+          "headline-md": [
+            "Space Grotesk"
+          ],
+          "headline-xl-mobile": [
+            "Syne"
+          ]
+        },
+        "fontSize": {
+          "display-hero-mobile": [
+            "44px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "800"
+            }
+          ],
+          "label-code": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "500"
+            }
+          ],
+          "label-mono-xs": [
+            "9px",
+            {
+              "lineHeight": "12px",
+              "letterSpacing": "0.14em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "13px",
+            {
+              "lineHeight": "20px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-hero": [
+            "84px",
+            {
+              "lineHeight": "90px",
+              "letterSpacing": "-0.04em",
+              "fontWeight": "800"
+            }
+          ],
+          "body-md": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-mono-sm": [
+            "11px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.08em",
+              "fontWeight": "500"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl": [
+            "56px",
+            {
+              "lineHeight": "62px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-xl-mobile": [
+            "32px",
+            {
+              "lineHeight": "38px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary selection:text-on-primary"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest/85 backdrop-blur-2xl z-50 flex flex-col justify-between p-space-md"><div class="flex flex-col gap-space-lg"><div class="flex items-center justify-between pb-space-md"><div class="flex items-center gap-space-sm"><span class="font-label-code text-label-code text-primary font-bold tracking-widest">[ ⟡ KV-01 ]</span></div><span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">SYSTEM_OS</span></div><div class="flex flex-col gap-space-xs"><span class="font-headline-md text-headline-md text-on-surface tracking-tighter uppercase font-bold">KAIZEN VANCE</span><span class="font-label-mono-xs text-label-mono-xs text-primary uppercase tracking-widest">PRIN_SYS // CREATIVE TECH</span></div><nav class="flex flex-col gap-space-xs mt-space-md" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded"><a aria-current="page" class="px-space-sm py-space-xs uppercase tracking-wider transition-colors bg-primary-container text-on-primary-container font-bold rounded" data-path="index" href="#">01 // INDEX</a><a class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors" data-path="selected-work" href="#">02 // SELECTED WORK</a><a class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors" data-path="system-architecture" href="#">03 // ARCHITECTURE</a><a class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors" data-path="neural-kernels" href="#">04 // NEURAL KERNELS</a><a class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors" data-path="system-log" href="#">05 // SYSTEM LOG</a><a class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface uppercase tracking-wider transition-colors" data-path="establish-link" href="#">06 // ESTABLISH LINK</a></nav></div><div class="flex flex-col gap-space-sm pt-space-md"><div class="flex flex-col gap-space-xs"><span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">LAT: 31.2304° N // LONG: 121.4737° E</span><span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">UTC: 09:41:22 // CLOCK_SYNC</span></div><div class="flex items-center justify-between p-space-xs bg-surface-container rounded"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-mono-xs text-label-mono-xs text-primary uppercase">GPU 99.98% READY</span></div><button class="font-label-mono-xs text-label-mono-xs text-on-surface-variant hover:text-primary transition-colors uppercase">[AUDIO: ON]</button></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-10 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center px-space-md overflow-hidden"><div class="flex items-center justify-between w-full"><div class="flex items-center gap-space-md whitespace-nowrap overflow-hidden"><span class="font-label-mono-xs text-label-mono-xs text-primary font-bold">[TELEMETRY]</span><span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant tracking-widest uppercase">CORE // DISTRIBUTED GRAPH // HIGH-FREQUENCY WEBGL // NEURAL KERNELS // SHANGHAI • BERLIN • SAN FRANCISCO</span></div><div class="flex items-center gap-space-md pl-space-md shrink-0"><span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">NODE_LATENCY: 12ms</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative pt-10 min-h-screen w-full bg-transparent"><div class="flex flex-col w-full relative">
+<!-- STITCH_THREEJS_START:ANIMATION_2 class="fixed inset-0 w-full h-full pointer-events-none z-0" -->
+<div class="fixed inset-0 w-full h-full pointer-events-none z-0" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_2" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_2');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  const scene = new THREE.Scene();
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+const camera = new THREE.PerspectiveCamera(60, width / height, 0.1, 1000);
+camera.position.z = 45;
+
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: "high-performance" });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Persistent continuous 3D world: Layered volumetric particle constellation & low-poly rotating topological kinetic ring/mesh
+const group = new THREE.Group();
+scene.add(group);
+
+// 1. Kinetic Amber Torus Wireframe (Central Spatial Motif)
+const torusGeo = new THREE.TorusGeometry(18, 4.5, 24, 70);
+const torusMat = new THREE.MeshBasicMaterial({
+  color: 0xf59e0b,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.18
+});
+const wireTorus = new THREE.Mesh(torusGeo, torusMat);
+wireTorus.position.set(16, 4, -10);
+group.add(wireTorus);
+
+// 2. Concentric Polyhedral Core
+const icosaGeo = new THREE.IcosahedronGeometry(11, 2);
+const icosaMat = new THREE.MeshBasicMaterial({
+  color: 0xd97706,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.12
+});
+const wireIcosa = new THREE.Mesh(icosaGeo, icosaMat);
+wireIcosa.position.set(16, 4, -10);
+group.add(wireIcosa);
+
+// 3. Volumetric Floating Kinetic Star/Node Dust Field (1,200 points)
+const particleCount = 1200;
+const pGeometry = new THREE.BufferGeometry();
+const positions = new Float32Array(particleCount * 3);
+const scales = new Float32Array(particleCount);
+const opacities = new Float32Array(particleCount);
+
+for (let i = 0; i < particleCount * 3; i += 3) {
+  positions[i] = (Math.random() - 0.5) * 140;
+  positions[i + 1] = (Math.random() - 0.5) * 120;
+  positions[i + 2] = (Math.random() - 0.5) * 80;
+  scales[i / 3] = Math.random() * 2.2 + 0.6;
+}
+
+pGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+// Custom Canvas Point Texture
+const canvas = document.createElement('canvas');
+canvas.width = 32;
+canvas.height = 32;
+const ctx = canvas.getContext('2d');
+const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
+grad.addColorStop(0, 'rgba(251, 191, 36, 1)');
+grad.addColorStop(0.3, 'rgba(245, 158, 11, 0.7)');
+grad.addColorStop(1, 'rgba(14, 16, 23, 0)');
+ctx.fillStyle = grad;
+ctx.beginPath();
+ctx.arc(16, 16, 16, 0, Math.PI * 2);
+ctx.fill();
+const pTexture = new THREE.CanvasTexture(canvas);
+
+const pMaterial = new THREE.PointsMaterial({
+  size: 1.8,
+  map: pTexture,
+  transparent: true,
+  opacity: 0.75,
+  blending: THREE.AdditiveBlending,
+  depthWrite: false
+});
+
+const particleSystem = new THREE.Points(pGeometry, pMaterial);
+group.add(particleSystem);
+
+// 4. Floating Geometric Orbiting Beacons
+const beaconGeo = new THREE.OctahedronGeometry(1.6, 0);
+const beaconMat = new THREE.MeshBasicMaterial({
+  color: 0xfef08a,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.45
+});
+const beacons = [];
+for (let i = 0; i < 5; i++) {
+  const mesh = new THREE.Mesh(beaconGeo, beaconMat);
+  mesh.userData = {
+    orbitRadius: 22 + i * 4,
+    speed: 0.004 + i * 0.002,
+    angle: (i / 5) * Math.PI * 2,
+    yOffset: (Math.random() - 0.5) * 15
+  };
+  group.add(mesh);
+  beacons.push(mesh);
+}
+
+// Interactive Cursor & Scroll reaction
+let mouseX = 0;
+let mouseY = 0;
+let targetX = 0;
+let targetY = 0;
+let scrollY = 0;
+let targetScrollY = 0;
+
+window.addEventListener('mousemove', (e) => {
+  mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+  mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+});
+
+window.addEventListener('scroll', () => {
+  scrollY = window.scrollY || window.pageYOffset;
+});
+
+window.addEventListener('resize', () => {
+  const w = container.clientWidth || window.innerWidth;
+  const h = container.clientHeight || window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+
+let clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const time = clock.getElapsedTime();
+
+  targetX += (mouseX - targetX) * 0.04;
+  targetY += (mouseY - targetY) * 0.04;
+  targetScrollY += (scrollY - targetScrollY) * 0.06;
+
+  // Ambient kinetic motion + mouse tilt
+  wireTorus.rotation.x = time * 0.12 + targetY * 0.35;
+  wireTorus.rotation.y = time * 0.16 + targetX * 0.45;
+  wireIcosa.rotation.x = -time * 0.08 + targetY * 0.2;
+  wireIcosa.rotation.z = time * 0.14 - targetX * 0.2;
+
+  // React to scroll: depth drift & section shift
+  const scrollRatio = targetScrollY / (document.body.scrollHeight || 4000);
+  camera.position.y = -targetScrollY * 0.018 + (targetY * -2);
+  camera.position.x = Math.sin(scrollRatio * Math.PI * 2) * 6 + (targetX * 3);
+  camera.position.z = 45 + Math.cos(scrollRatio * Math.PI) * 10;
+  camera.lookAt(0, camera.position.y * 0.5, 0);
+
+  // Shift torus position smoothly through sections
+  wireTorus.position.y = 4 - (targetScrollY * 0.022);
+  wireTorus.position.x = 16 - Math.sin(scrollRatio * Math.PI * 3) * 28;
+  wireIcosa.position.copy(wireTorus.position);
+
+  // Drifting particle field
+  particleSystem.rotation.y = time * 0.03 + (targetX * 0.1);
+  particleSystem.rotation.x = Math.sin(time * 0.05) * 0.1 - (targetY * 0.1);
+
+  // Orbiting beacons
+  beacons.forEach(b => {
+    b.userData.angle += b.userData.speed;
+    b.position.x = wireTorus.position.x + Math.cos(b.userData.angle) * b.userData.orbitRadius;
+    b.position.z = wireTorus.position.z + Math.sin(b.userData.angle) * b.userData.orbitRadius * 0.6;
+    b.position.y = wireTorus.position.y + b.userData.yOffset + Math.sin(time + b.userData.angle) * 3;
+    b.rotation.x += 0.015;
+    b.rotation.y += 0.02;
+  });
+
+  renderer.render(scene, camera);
+}
+animate();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_2 -->
+<!-- BACKGROUND AMBIENT GRADIENTS & AXIS LINES -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-32 right-1/4 w-[600px] h-[600px] bg-primary-container/10 blur-[140px] rounded-full"></div>
+<div class="absolute top-1/2 -left-48 w-[500px] h-[500px] bg-tertiary-container/5 blur-[160px] rounded-full"></div>
+<div class="absolute inset-0 bg-[radial-gradient(#534434_1px,transparent_1px)] [background-size:32px_32px] opacity-15"></div>
+</div>
+<!-- ========================================================================= -->
+<!-- 01 // HERO SECTION : ASYMMETRIC BREACHED ARCHITECTURAL CARTOGRAPHY -->
+<!-- ========================================================================= -->
+<section class="relative z-10 w-full min-h-[92vh] flex flex-col justify-between px-space-md lg:px-space-2xl pt-space-xl pb-space-2xl">
+<!-- TOP HORIZONTAL TELEMETRY STRIP -->
+<div class="w-full flex flex-wrap items-center justify-between gap-space-sm pb-space-lg text-on-surface-variant font-label-mono-xs text-label-mono-xs tracking-widest uppercase">
+<div class="flex items-center gap-space-sm">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+<span class="text-primary font-bold">[SYS_ARCH // LEVEL 09]</span>
+<span class="text-surface-bright">/</span>
+<span>INDEX: 0x8F9A_V7</span>
+</div>
+<div class="flex items-center gap-space-lg">
+<span class="hidden sm:inline">COORDINATES: 37.7749° N, 122.4194° W</span>
+<span class="hidden md:inline text-surface-bright">/</span>
+<span class="hidden md:inline">KERNEL: RUST_6.8.1-LLVM_WASM</span>
+<span class="bg-surface-container-high px-space-sm py-0.5 rounded text-primary">STATUS: UNBOUND</span>
+</div>
+</div>
+<!-- MAIN BREACHED GRID BODY -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center relative my-auto">
+<!-- MASSIVE LEFT TYPOGRAPHIC ANCHOR -->
+<div class="lg:col-span-8 flex flex-col gap-space-md relative">
+<div class="flex items-center gap-space-sm text-primary font-label-mono-sm text-label-mono-sm">
+<span class="font-bold tracking-widest">[ ⟡ COGNITIVE TOPOLOGY ]</span>
+<span class="h-px w-16 bg-surface-variant"></span>
+<span class="text-on-surface-variant">NODE CLUSTER: SF // BER // SH</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tighter uppercase font-extrabold leading-none select-none">
+          KAIZEN<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed to-secondary-fixed">VANCE</span>
+</h1>
+<div class="flex flex-wrap gap-space-xs items-center pt-space-xs">
+<span class="px-space-sm py-1 bg-surface-container-highest/60 backdrop-blur-md rounded text-primary font-label-mono-xs text-label-mono-xs tracking-widest uppercase font-semibold">
+            PRINCIPAL ARCHITECT
+          </span>
+<span class="px-space-sm py-1 bg-surface-container-high/40 backdrop-blur-md rounded text-on-surface-variant font-label-mono-xs text-label-mono-xs tracking-widest uppercase">
+            DISTRIBUTED COMPUTE
+          </span>
+<span class="px-space-sm py-1 bg-surface-container-high/40 backdrop-blur-md rounded text-secondary font-label-mono-xs text-label-mono-xs tracking-widest uppercase">
+            WEBGPU ACCELERATION
+          </span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl pt-space-sm leading-relaxed">
+          Building autonomous distributed runtimes and zero-latency spatial interfaces for non-Euclidean computational realms. Synthesizing bare-metal microkernels with high-order generative graphics.
+        </p>
+<!-- CTA INTERACTIVE ROW -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-md">
+<a class="px-space-lg py-space-sm bg-primary text-on-primary font-body-md text-body-md font-semibold rounded hover:bg-primary-fixed transition-all flex items-center gap-space-xs shadow-lg shadow-primary-container/20 group" href="#projects">
+<span>EXPLORE ARTIFACTS</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<a class="px-space-lg py-space-sm bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface font-label-mono-sm text-label-mono-sm rounded backdrop-blur-md transition-all flex items-center gap-space-xs" href="#uplink">
+<span class="text-primary font-bold">[ ⌘ ]</span>
+<span>SECURE TRANSMISSION</span>
+</a>
+</div>
+</div>
+<!-- RIGHT MONOSPACE TELEMETRY HUD / LIVE CONSOLE -->
+<div class="lg:col-span-4 flex flex-col">
+<div class="p-space-md bg-surface-container-lowest/85 backdrop-blur-2xl rounded-xl shadow-2xl relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent opacity-80"></div>
+<div class="flex items-center justify-between pb-space-sm mb-space-sm bg-surface-container-low px-space-sm py-space-xs rounded">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-code text-label-code text-primary font-bold">TERMINAL // TELEMETRY.SYS</span>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">PID: 40912</span>
+</div>
+<!-- DYNAMIC RUNTIME FEED -->
+<div class="flex flex-col gap-space-xs font-label-mono-xs text-label-mono-xs text-on-surface-variant font-medium">
+<div class="flex justify-between items-center py-1">
+<span class="text-outline">WASM MEM ALLOC:</span>
+<span class="text-primary font-bold">64.2 MB / 512 MB</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[24%]"></div>
+</div>
+<div class="flex justify-between items-center py-1 mt-space-xs">
+<span class="text-outline">SHADER PIPELINE:</span>
+<span class="text-secondary font-bold">METAL 3.1 OPTIMIZED</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-outline">RAYMARCH SAMPLES:</span>
+<span class="text-on-surface">120 FPS // VSYNC SYNCED</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-outline">GLOBAL CLUSTER PING:</span>
+<span class="text-primary font-bold">0.38 ms avg</span>
+</div>
+<!-- TERMINAL LOG RUNNER -->
+<div class="mt-space-sm p-space-xs bg-surface-container-lowest rounded font-label-code text-[11px] leading-tight text-on-surface-variant flex flex-col gap-1">
+<span class="text-outline-variant">&gt; init_hypergraph_sync()</span>
+<span class="text-primary">&gt; [OK] CRDT tensor states unified.</span>
+<span class="text-secondary">&gt; listening on 0.0.0.0:8043 (QUIC)</span>
+<span class="text-on-surface animate-pulse">&gt; _</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-label-mono-xs text-label-mono-xs">
+<span>MEM_LOCK: ENCRYPTED</span>
+<span class="text-primary font-bold">SHA-256 VALIDATED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM ARCHITECTURAL SCROLL VECTOR CUE -->
+<div class="w-full flex items-center justify-between pt-space-lg text-on-surface-variant">
+<div class="flex items-center gap-space-md">
+<span class="font-label-mono-xs text-label-mono-xs text-primary font-bold">01 // ROOT ENTRY</span>
+<span class="hidden sm:inline font-label-mono-xs text-label-mono-xs text-outline">|</span>
+<span class="hidden sm:inline font-label-mono-xs text-label-mono-xs">DISPATCH LOG ACTIVE</span>
+</div>
+<a class="flex items-center gap-space-xs font-label-mono-xs text-label-mono-xs text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase" href="#about">
+<span>[SCROLL_DOWN // 01 ➔ 07]</span>
+<span class="text-primary text-[14px] animate-bounce">⟡</span>
+</a>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 02 // EDITORIAL ABOUT SECTION : ASYMMETRIC SPREAD & SCANLINE PORTRAIT -->
+<!-- ========================================================================= -->
+<section class="relative z-10 w-full px-space-md lg:px-space-2xl py-space-3xl bg-surface-container-lowest/70 backdrop-blur-xl" id="about">
+<!-- SUB-HEADER ANCHOR -->
+<div class="flex items-center justify-between pb-space-2xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code text-label-code text-primary font-bold">[ 02 // RECONSTRUCTION ]</span>
+<span class="h-px w-24 bg-surface-variant"></span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">ARCHITECTURAL BIOGRAPHY</span>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-primary bg-primary-container/20 px-space-sm py-0.5 rounded">
+        SYSTEM_ORIGIN: 2012.09
+      </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT: BESPOKE CHAMFERED IMAGE CONTAINER -->
+<div class="lg:col-span-5 relative group">
+<div class="relative w-full aspect-[4/5] bg-surface-container rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-700" data-alt="High contrast editorial monochrome portrait of a visionary male systems architect with cybernetic amber matrix scanline projection across cheekbone and forehead, deep obsidian studio shadows, futuristic industrial fashion silhouette, moody volumetric directional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAflgr6b3FAGzxt02zhHpGwhBWQqZHIAKSMnEUHe2guv2wa0QqzXctyWjDTYIfOBhzDEPTyhvMl314nBXb4BG9bO-NWwkCrG1iSAiA7hy8mR92yR4l7H7Hbe1EAobWlrLjJOBfaErgqKZERu31ihEHbyunOW6lnIOIGRyW0EbOJLjc1J4bgkUid-vhbn0SiVFhRWgugNr_heWacPOEs4tSXy7ONbLY6X7RJ08Jl9Ot1"/>
+<!-- SCANLINE + MATRIX OVERLAYS -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-90"></div>
+<div class="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(245,158,11,0.04)_3px,rgba(245,158,11,0.04)_4px)] pointer-events-none"></div>
+<!-- ANNOTATION HUD OVERLAY -->
+<div class="absolute top-4 left-4 p-space-xs bg-surface-container-lowest/80 backdrop-blur-md rounded font-label-mono-xs text-label-mono-xs text-primary flex flex-col gap-0.5">
+<span>SUBJ: KV_ARCH_01</span>
+<span class="text-on-surface-variant text-[8px]">ID: 884-902-AF</span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 p-space-sm bg-surface-container-lowest/90 backdrop-blur-md rounded-lg flex items-center justify-between">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface font-bold leading-none">Kaizen Vance</div>
+<div class="font-label-mono-xs text-label-mono-xs text-primary mt-1">RESEARCH FELLOW // SAN FRANCISCO</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+</div>
+<!-- AMBIENT GEOMETRIC ACCENT BRACKET -->
+<div class="absolute -bottom-3 -right-3 w-16 h-16 bg-surface-container-high/40 rounded-xl -z-10 blur-sm"></div>
+</div>
+<!-- RIGHT: INTELLECTUAL TECHNICAL NARRATIVE + BENCHMARK TILES -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-mono-xs text-label-mono-xs text-tertiary uppercase tracking-widest">[ MANIFESTO &amp; ORIGIN ]</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight leading-tight">
+            Engineering sovereign computation at the edge of physics and perception.
+          </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md text-on-surface-variant font-body-md text-body-md leading-relaxed">
+<p>
+            Over twelve years of research into distributed runtime invariants, I have worked across the fault line dividing bare-metal micro-architecture from fluid, high-frame spatial aesthetics. The prevailing consensus treats backend throughput and visual spatialization as isolated domains; my engineering philosophy insists they are mathematically inseparable.
+          </p>
+<p>
+            From authoring high-concurrency CRDT consensus protocols used by global institutional networks to crafting custom WebGPU compute shaders executing real-time implicit surface raymarching, every system is designed with surgical precision, mathematical determinism, and zero tolerance for superfluous abstractions.
+          </p>
+</div>
+<!-- 3 ARCHITECTURAL METRIC CARDS -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-md">
+<div class="p-space-md bg-surface-container-high/60 backdrop-blur-md rounded-xl flex flex-col gap-1 hover:bg-surface-container-highest transition-colors">
+<span class="font-label-mono-xs text-label-mono-xs text-primary font-bold tracking-wider">THROUGHPUT AUDITED</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">42M+</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Daily zero-fault transactions over distributed state graphs</span>
+</div>
+<div class="p-space-md bg-surface-container-high/60 backdrop-blur-md rounded-xl flex flex-col gap-1 hover:bg-surface-container-highest transition-colors">
+<span class="font-label-mono-xs text-label-mono-xs text-secondary font-bold tracking-wider">LATENCY FLOOR</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">0.42ms</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Deterministic sub-millisecond p99 consensus threshold</span>
+</div>
+<div class="p-space-md bg-surface-container-high/60 backdrop-blur-md rounded-xl flex flex-col gap-1 hover:bg-surface-container-highest transition-colors">
+<span class="font-label-mono-xs text-label-mono-xs text-tertiary font-bold tracking-wider">INTELLECTUAL IP</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">14</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Granted patents in spatial compute &amp; non-blocking locks</span>
+</div>
+</div>
+<!-- TECHNICAL FOCUS PILLS -->
+<div class="flex flex-wrap items-center gap-space-xs pt-space-xs font-label-mono-xs text-label-mono-xs">
+<span class="px-space-sm py-1 bg-surface-container rounded text-outline">RUST 2024</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-outline">C++23 LLVM</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-outline">WEBGPU WGSL</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-outline">CRDT KERNELS</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-outline">ZERO-COPY QUIC</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-outline">TENSOR PARALLELISM</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 03 // SKILLS & CAPABILITIES : ASYMMETRIC BENTO GRID -->
+<!-- ========================================================================= -->
+<section class="relative z-10 w-full px-space-md lg:px-space-2xl py-space-3xl">
+<div class="flex flex-col gap-space-xs mb-space-2xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code text-label-code text-primary font-bold">[ 03 // CAPABILITIES ]</span>
+<span class="h-px w-16 bg-surface-variant"></span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">TACTICAL SUBSYSTEMS</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+        Surgical proficiencies across the stack.
+      </h2>
+</div>
+<!-- NON-UNIFORM ASYMMETRIC BENTO -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-12 gap-space-lg">
+<!-- CARD 1: LARGE 2x2 SPAN (COLS 7) - HIGH THROUGHPUT KERNEL -->
+<div class="lg:col-span-7 bg-surface-container-low/80 backdrop-blur-xl p-space-xl rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all shadow-xl">
+<div class="absolute top-0 right-0 p-space-md font-label-mono-xs text-label-mono-xs text-outline">
+          SUBSYS // 01.A
+        </div>
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-space-xs">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-primary tracking-widest uppercase">CONCURRENCY &amp; RUNTIMES</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            High-Throughput Microkernel Design
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-lg leading-relaxed">
+            Bare-metal custom asynchronous executors written in Rust with deterministic lock-free ring buffers, zero-copy socket interfaces, and sub-100-nanosecond inter-thread channel dispatch.
+          </p>
+</div>
+<!-- SIMULATED LIVE LATENCY WAVE BARS -->
+<div class="mt-space-xl pt-space-md bg-surface-container-lowest/60 p-space-md rounded-xl flex flex-col gap-space-xs">
+<div class="flex items-center justify-between text-on-surface-variant font-label-mono-xs text-label-mono-xs">
+<span>KERNEL BUFFER STREAM: RX/TX DUPLEX</span>
+<span class="text-primary font-bold">BUFFER HEALTH: 100%</span>
+</div>
+<div class="flex items-end gap-1.5 h-12 w-full pt-2">
+<div class="flex-1 bg-primary/40 rounded-t h-[40%] animate-pulse"></div>
+<div class="flex-1 bg-primary/60 rounded-t h-[65%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t h-[85%] animate-pulse"></div>
+<div class="flex-1 bg-primary rounded-t h-[50%]"></div>
+<div class="flex-1 bg-primary/70 rounded-t h-[75%]"></div>
+<div class="flex-1 bg-primary/90 rounded-t h-[95%] animate-pulse"></div>
+<div class="flex-1 bg-primary/50 rounded-t h-[60%]"></div>
+<div class="flex-1 bg-primary/80 rounded-t h-[45%]"></div>
+<div class="flex-1 bg-primary/90 rounded-t h-[80%]"></div>
+<div class="flex-1 bg-primary rounded-t h-[100%] animate-pulse"></div>
+<div class="flex-1 bg-primary/70 rounded-t h-[70%]"></div>
+<div class="flex-1 bg-primary/50 rounded-t h-[40%]"></div>
+</div>
+</div>
+</div>
+<!-- CARD 2: VERTICAL TALL SPAN (COLS 5) - WEBGL & METAL SHADERS -->
+<div class="lg:col-span-5 bg-surface-container-low/80 backdrop-blur-xl p-space-xl rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:bg-surface-container transition-all shadow-xl">
+<div class="absolute top-0 right-0 p-space-md font-label-mono-xs text-label-mono-xs text-outline">
+          SUBSYS // 02.B
+        </div>
+<div class="flex flex-col gap-space-sm">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary mb-space-xs">
+<span class="material-symbols-outlined">deployed_code</span>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-secondary tracking-widest uppercase">HARDWARE ACCELERATION</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+            Hardware WebGL &amp; Metal Shaders
+          </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Writing mathematical raymarchers, compute particle manifolds, screen-space ambient occlusion passes, and sovereign 60-120fps spatial visualizers directly in WGSL and Metal Shading Language.
+          </p>
+</div>
+<!-- INTERACTIVE CSS WIREFRAME MATRIX SIMULATION -->
+<div class="mt-space-lg w-full h-32 bg-surface-container-lowest/80 rounded-xl relative overflow-hidden flex items-center justify-center">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(222,196,139,0.15)_0,transparent_70%)]"></div>
+<div class="w-20 h-20 rounded-full border border-secondary/30 flex items-center justify-center animate-spin" style="animation-duration: 18s;">
+<div class="w-14 h-14 rounded-md border border-primary/40 rotate-45"></div>
+</div>
+<span class="absolute bottom-2 font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">
+            MATRIX: WGSL_PIPELINE_OK
+          </span>
+</div>
+</div>
+<!-- CARD 3: HORIZONTAL (COLS 6) - DISTRIBUTED CONSENSUS -->
+<div class="lg:col-span-6 bg-surface-container-low/80 backdrop-blur-xl p-space-lg rounded-2xl flex flex-col justify-between relative group hover:bg-surface-container transition-all shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary font-label-mono-xs text-label-mono-xs font-bold uppercase">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+<span>CONSENSUS ENGINES</span>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-outline">SUBSYS // 03.C</span>
+</div>
+<div class="my-space-md">
+<h4 class="font-headline-md text-headline-md text-on-surface font-bold mb-1">
+            Distributed Graph Consensus
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            State-machine replication, conflict-free replicated data types (CRDTs), deterministic Byzantine fault tolerance, and gossip protocols crafted for high partition-risk nodes.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-mono-xs text-label-mono-xs text-outline">
+<span class="flex items-center gap-1.5 text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            SYNC: 256 NODES LOCKED
+          </span>
+<span class="bg-surface-container px-space-sm py-0.5 rounded text-on-surface">P99: 0.28ms</span>
+</div>
+</div>
+<!-- CARD 4: HORIZONTAL (COLS 6) - AUTONOMOUS AGENT ORCHESTRATION -->
+<div class="lg:col-span-6 bg-surface-container-low/80 backdrop-blur-xl p-space-lg rounded-2xl flex flex-col justify-between relative group hover:bg-surface-container transition-all shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-tertiary font-label-mono-xs text-label-mono-xs font-bold uppercase">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+<span>NEURAL SUBSTRATES</span>
+</div>
+<span class="font-label-mono-xs text-label-mono-xs text-outline">SUBSYS // 04.D</span>
+</div>
+<div class="my-space-md">
+<h4 class="font-headline-md text-headline-md text-on-surface font-bold mb-1">
+            Autonomous Agent Orchestration
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Constructing multi-agent symbolic reasoning graphs, tensor-level model routing, context window pruning with vector embeddings, and zero-latency local LLM inference engines.
+          </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-mono-xs text-label-mono-xs text-outline">
+<span class="text-tertiary font-bold">QUANTIZATION: 4-BIT AWQ</span>
+<span class="bg-surface-container px-space-sm py-0.5 rounded text-on-surface">TOKENS: 142 t/s</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 04 // SELECTED PROJECTS : ASYMMETRIC MASONRY WITH TILT HOVER -->
+<!-- ========================================================================= -->
+<section class="relative z-10 w-full px-space-md lg:px-space-2xl py-space-3xl bg-surface-container-lowest/70 backdrop-blur-xl" id="projects">
+<div class="flex flex-wrap items-end justify-between gap-space-md mb-space-2xl">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code text-label-code text-primary font-bold">[ 04 // ARTIFACTS ]</span>
+<span class="h-px w-24 bg-surface-variant"></span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">SELECTED CODEBASES</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">
+          Systems in Production.
+        </h2>
+</div>
+<div class="font-label-mono-xs text-label-mono-xs text-on-surface-variant text-right">
+        FILTER: ARCHITECTURAL_SCALE<br/>
+        STABLE BUILDS ONLY
+      </div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl">
+<!-- PROJECT 01 : OVERSIZED HERO FEATURE (COLS 12) - AETHER_OS -->
+<div class="lg:col-span-12 p-space-xl bg-surface-container-low/90 backdrop-blur-2xl rounded-2xl flex flex-col lg:flex-row gap-space-xl items-center relative overflow-hidden group hover:bg-surface-container transition-all shadow-2xl">
+<div class="absolute top-0 left-0 w-1.5 h-full bg-primary"></div>
+<div class="w-full lg:w-1/2 flex flex-col gap-space-md">
+<div class="flex items-center gap-space-sm font-label-mono-xs text-label-mono-xs">
+<span class="px-space-sm py-0.5 bg-primary/20 text-primary font-bold rounded">PRJ_01 // CORE FLAGSHIP</span>
+<span class="text-outline">COMMIT: f83e91c</span>
+<span class="text-surface-bright">/</span>
+<span class="text-on-surface-variant">STATUS: RUNNING</span>
+</div>
+<h3 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tighter">
+            AETHER_OS
+          </h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            A sovereign spatial operating environment featuring a WebAssembly-native microkernel. Executes zero-overhead memory protection between sandboxed graphical threads, running real-time 3D workspace surfaces directly over decentralized distributed memory.
+          </p>
+<div class="flex flex-wrap gap-space-xs pt-space-xs font-label-mono-xs text-label-mono-xs">
+<span class="px-space-sm py-1 bg-surface-container rounded text-primary">[ RUST ]</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-primary">[ WEBGPU ]</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-primary">[ LLVM ]</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-primary">[ CRDT ]</span>
+<span class="px-space-sm py-1 bg-surface-container rounded text-primary">[ WASM ]</span>
+</div>
+<div class="flex items-center gap-space-md pt-space-sm">
+<button class="px-space-md py-space-sm bg-primary text-on-primary font-label-mono-sm text-label-mono-sm font-bold rounded hover:bg-primary-fixed transition-colors flex items-center gap-space-xs">
+<span>EXPLORE SCHEMATICS</span>
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+</button>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">42.8k GITHUB STARS</span>
+</div>
+</div>
+<div class="w-full lg:w-1/2 aspect-video bg-surface-container rounded-xl overflow-hidden relative shadow-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Futuristic holographic architectural operating system blueprint with complex 3D wireframe spatial nodes, glowing amber and burnished brass vector line grids on ultra dark obsidian background, clean technical orthographic projections, high resolution UI dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-7Ql1ngG7sV8iSLDsBZV5XwIcs2COzFPSev9Kx4Gu9N1liFmdp6n4sLGonVzbic8MKvVPFrPZnUFy8NLoPcDKF8bHl6HjkG8fUvFk-CtHASL5FiIhPBAoOc1XR3lg3SmzbB4FBDNmomPN4pWf5YRYZqVbfl7qPVfAFvDEIsaDgpUXQyaxDy6R-nSp2PoeJjFh5GLp9PCLpKN-lsuuiSaySvCuKvReQZ1IdlVX_dZX"/>
+<div class="absolute bottom-2 right-2 px-space-xs py-0.5 bg-surface-container-lowest/90 backdrop-blur rounded font-label-mono-xs text-[9px] text-primary">
+            DIAGRAM: WIREFRAME_RENDER_v4
+          </div>
+</div>
+</div>
+<!-- PROJECT 02 : COMPACT (COLS 5) - NEURA_MESH -->
+<div class="lg:col-span-5 p-space-lg bg-surface-container-low/90 backdrop-blur-2xl rounded-2xl flex flex-col justify-between relative group hover:bg-surface-container transition-all shadow-xl">
+<div class="flex items-center justify-between pb-space-sm font-label-mono-xs text-label-mono-xs text-outline">
+<span class="text-secondary font-bold">PRJ_02 // P2P TENSOR</span>
+<span>TAG: REL_3.12</span>
+</div>
+<div class="w-full aspect-[16/10] bg-surface-container rounded-lg overflow-hidden my-space-sm relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dense mathematical network mesh of interconnected nodes with glowing golden topological links, decentralized peer to peer neural gradient aggregation diagram, dark moody sci-fi visual compute interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHIX3QYiB7dqIW-KcrSHe2hKhPom4f3nJX7k6HQ5rmmLlRhi3cjWLmdCXuz2uUSBJAyzBZTUghNjlqIe8eKxhuFEb2BCaTaaXtApmNIITzZV4-40FP447CSepOAC-hs0FzU-S5fQM6G6m8GcwiJGks6EL4hJ2xxxPDNB8Abg8pEjOcf9aWpx0vsMYXYxbmLkrG4o_PA3gNJ6fuf-WfeVtI-O6vcsXa_IUd0SiAKWOP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-sm">
+<h4 class="font-headline-md text-headline-md text-on-surface font-bold">NEURA_MESH</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Decentralized peer-to-peer tensor gradient aggregation for edge models. Compresses gradients via stochastic quantization, sustaining network synchronization over intermittent cellular uplinks.
+          </p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-mono-xs text-label-mono-xs text-on-surface-variant">
+<span class="text-primary font-bold">[LIBP2P // PYTORCH // CUDA]</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform text-primary">arrow_outward</span>
+</div>
+</div>
+<!-- PROJECT 03 : MEDIUM TALL (COLS 7) - OBSIDIAN_CORE -->
+<div class="lg:col-span-7 p-space-lg bg-surface-container-low/90 backdrop-blur-2xl rounded-2xl flex flex-col justify-between relative group hover:bg-surface-container transition-all shadow-xl">
+<div class="flex items-center justify-between pb-space-sm font-label-mono-xs text-label-mono-xs text-outline">
+<span class="text-tertiary font-bold">PRJ_03 // MATCHING ENGINE</span>
+<span>ZERO-GC RUNTIME</span>
+</div>
+<div class="w-full aspect-[21/9] bg-surface-container rounded-lg overflow-hidden my-space-sm relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Monochrome algorithmic financial hardware server visualization with glowing warm amber status indicators, low latency optical fiber routing, ultra dense circuit board traces, brutalist technological aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgJF82RkQPLk4csmwVLue2fXexH4Dvyr1F8tDEQ3KYPahtw5uZedbgQt73RSuxjRgur0FMDlHsQPral6K_3PBV5P_-uDRbAp3WenJi5kHGV_SEhB1cTbYFk5yP3WrnP_lpiuCOCPapk97vfHbsIZLkGWndFAPn4N-T77E33lw-KXmcp7dq0IEFbcloh8uDPosS0-JwDR871Y0yOf1TaqDiGda379r-RbbhYOjbtDrw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
+</div>
+<div class="flex flex-col gap-space-xs mt-space-sm">
+<h4 class="font-headline-md text-headline-md text-on-surface font-bold">OBSIDIAN_CORE</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Sub-millisecond institutional order matching engine engineered with zero garbage-collection overhead. Implemented with lockless L1 cache affinity and kernel bypass (DPDK) for microsecond level tick execution.
+          </p>
+</div>
+<div class="pt-space-md flex items-center justify-between font-label-mono-xs text-label-mono-xs text-on-surface-variant">
+<span class="text-tertiary font-bold">[C++23 // DPDK // CACHE-FRIENDLY]</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform text-tertiary">arrow_outward</span>
+</div>
+</div>
+<!-- PROJECT 04 : FULL-WIDTH WIDE (COLS 12) - SYNAPSE_SPATIAL -->
+<div class="lg:col-span-12 p-space-xl bg-surface-container-low/90 backdrop-blur-2xl rounded-2xl flex flex-col md:flex-row gap-space-lg items-center relative group hover:bg-surface-container transition-all shadow-xl">
+<div class="w-full md:w-2/5 aspect-[16/9] bg-surface-container rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Volumetric neural radiance field visualizer with translucent amber cloud points, 3D point cloud camera frustum trajectory, highly detailed procedural point mesh on pitch black background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCImq0hTx_RhLX0st-wcyq38W4agrIf64EU_-hULWDpeQ0KEqKLm4Er-3E67RVg4wqidvdo85X4j28OwEQYApDRuoTKNx0YkB7zyzcuekbItY54wJaACp9qDHH6lpK0DSKOHhfsp3juMDUcnSgyvBhuRqqckp2Dt6uHrWFSNMalOLeemYbpHA95hcLhV39P8UuyaJ1VbfOhw5h4ivrX0Dj7VaEW_SfNDiKzM9IoEA-h"/>
+</div>
+<div class="w-full md:w-3/5 flex flex-col gap-space-sm">
+<div class="flex items-center gap-space-xs font-label-mono-xs text-label-mono-xs text-primary font-bold">
+<span>PRJ_04 // NEURAL RADIANCE</span>
+<span class="text-surface-bright">/</span>
+<span class="text-outline">120 FPS RAYMARCH</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-on-surface font-bold">SYNAPSE_SPATIAL</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Browser-based neural radiance field (NeRF) visualizer executing 120fps raymarching through custom WebGPU pipelines. Implements spherical harmonics rendering and dynamic camera frustum interpolations with minimal memory footprint.
+          </p>
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-xs font-label-mono-xs text-label-mono-xs text-on-surface-variant">
+<span class="px-space-sm py-1 bg-surface-container rounded">[ WEBGPU ]</span>
+<span class="px-space-sm py-1 bg-surface-container rounded">[ SPHERICAL HARMONICS ]</span>
+<span class="px-space-sm py-1 bg-surface-container rounded">[ SHADER TOY ]</span>
+</div>
+<a class="font-label-mono-xs text-label-mono-xs text-primary hover:underline flex items-center gap-1 font-bold" href="#">
+<span>LAUNCH BROWSER TESTBED</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 05 // CAREER ARCHITECTURE / EXPERIENCE : CYBER TIMELINE -->
+<!-- ========================================================================= -->
+<section class="relative z-10 w-full px-space-md lg:px-space-2xl py-space-3xl">
+<div class="flex flex-col gap-space-xs mb-space-2xl">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code text-label-code text-primary font-bold">[ 05 // EVOLUTION ]</span>
+<span class="h-px w-20 bg-surface-variant"></span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">CAREER VECTOR LOG</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+        Chronology of Systems Architecture.
+      </h2>
+</div>
+<!-- TIMELINE CONTAINER -->
+<div class="relative pl-6 lg:pl-12 flex flex-col gap-space-2xl">
+<!-- GLOWING VERTICAL RUNNER AXIS -->
+<div class="absolute left-2 lg:left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-secondary to-outline-variant"></div>
+<!-- NODE 01 : 2022 - PRESENT -->
+<div class="relative flex flex-col gap-space-sm">
+<!-- PULSING GLYPH NODE PIN -->
+<div class="absolute -left-[27px] lg:-left-[35px] top-1.5 w-4 h-4 rounded-full bg-surface border-2 border-primary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></div>
+</div>
+<div class="flex flex-wrap items-baseline gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-primary font-bold tracking-widest">2022 — PRESENT</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Fellow &amp; Chief Architect</span>
+<span class="text-on-surface-variant font-label-mono-xs text-label-mono-xs">@ Hyperion Research Labs (Autonomous Distributed Systems)</span>
+</div>
+<div class="p-space-lg bg-surface-container-low/70 backdrop-blur-xl rounded-xl max-w-4xl flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Directing core architectural research in next-generation sovereign runtimes. Spearheaded development of an asynchronous multi-tenant actor engine handling 40M+ daily operations with mathematically proven fault tolerance. Mentoring senior engineering staff in formal verification and zero-leak memory architectures.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md text-outline font-label-mono-xs text-label-mono-xs pt-space-xs">
+<span class="text-primary">KEY METRIC: 99.999% CONSENSUS RELIABILITY</span>
+<span>RELEASE: HYPER-KERNEL 2.4</span>
+<span>IP: 6 PATENTS FILED</span>
+</div>
+</div>
+</div>
+<!-- NODE 02 : 2019 - 2022 -->
+<div class="relative flex flex-col gap-space-sm">
+<div class="absolute -left-[27px] lg:-left-[35px] top-1.5 w-4 h-4 rounded-full bg-surface border-2 border-secondary flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-secondary"></div>
+</div>
+<div class="flex flex-wrap items-baseline gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-secondary font-bold tracking-widest">2019 — 2022</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Lead Spatial Computing Engineer</span>
+<span class="text-on-surface-variant font-label-mono-xs text-label-mono-xs">@ Vector Dynamics (WebGPU Core Graphics)</span>
+</div>
+<div class="p-space-lg bg-surface-container-low/70 backdrop-blur-xl rounded-xl max-w-4xl flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Engineered the browser-based WebGPU rendering pipeline for real-time volumetric point clouds. Reduced frame drop by 68% across low-power mobile devices by inventing dynamic compute-shader level of detail (LOD) tessellation.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md text-outline font-label-mono-xs text-label-mono-xs pt-space-xs">
+<span class="text-secondary">KEY METRIC: 120 FPS STABLE OVER 10M VERTICES</span>
+<span>SPECIFICATION: W3C WEBGPU CONTRIBUTOR</span>
+</div>
+</div>
+</div>
+<!-- NODE 03 : 2016 - 2019 -->
+<div class="relative flex flex-col gap-space-sm">
+<div class="absolute -left-[27px] lg:-left-[35px] top-1.5 w-4 h-4 rounded-full bg-surface border-2 border-outline flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-outline"></div>
+</div>
+<div class="flex flex-wrap items-baseline gap-space-sm">
+<span class="font-label-mono-sm text-label-mono-sm text-outline font-bold tracking-widest">2016 — 2019</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold">Senior Systems Engineer</span>
+<span class="text-on-surface-variant font-label-mono-xs text-label-mono-xs">@ Protocol Labs (InterPlanetary Consensus &amp; Cryptography)</span>
+</div>
+<div class="p-space-lg bg-surface-container-low/70 backdrop-blur-xl rounded-xl max-w-4xl flex flex-col gap-space-sm">
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Architected decentralized hash-addressed routing tables and implemented libp2p cryptographic transport layers in Golang and Rust. Designed memory-efficient Merkle DAG traversals for multi-terabyte data archives.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md text-outline font-label-mono-xs text-label-mono-xs pt-space-xs">
+<span>KEY METRIC: 10X DAG ENCODING SPEEDUP</span>
+<span>OPEN SOURCE: 120+ REPO PRs MERGED</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 06 // ENDORSEMENTS & DISPATCHES : CONTINUOUS STREAM + CONSOLE CARDS -->
+<!-- ========================================================================= -->
+<section class="relative z-10 w-full py-space-3xl bg-surface-container-lowest/80 backdrop-blur-xl overflow-hidden">
+<div class="px-space-md lg:px-space-2xl mb-space-xl">
+<div class="flex items-center gap-space-sm mb-space-xs">
+<span class="font-label-code text-label-code text-primary font-bold">[ 06 // DISPATCHES ]</span>
+<span class="h-px w-20 bg-surface-variant"></span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">CRYPTOGRAPHIC PEER REVIEWS</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+        Verified Transmission Streams.
+      </h2>
+</div>
+<!-- KINETIC RUNNING TICKER STRIP -->
+<div class="w-full bg-surface-container-low py-space-xs overflow-hidden flex whitespace-nowrap mb-space-xl">
+<div class="flex gap-space-xl font-label-mono-xs text-label-mono-xs text-primary uppercase tracking-widest animate-pulse">
+<span>// "KAIZEN'S KERNEL IS THE GOLD STANDARD FOR FAULTLESS ASYNCHRONY" — DR. H. ARIS</span>
+<span>// "SUB-MILLISECOND P99 IS REALIZED ONLY THROUGH HIS INVENTIONS" — VP ENG, EXA</span>
+<span>// "RARE GENIUS CAPABLE OF LOW-LEVEL RUST AND MESMERIZING WEBGPU SHADERS"</span>
+<span>// "PATENT REF: US-118942-B // PROTOCOL VALIDATED"</span>
+</div>
+</div>
+<!-- STACKED CONSOLE CARDS -->
+<div class="px-space-md lg:px-space-2xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg">
+<!-- DISPATCH 01 -->
+<div class="p-space-lg bg-surface-container-high/60 backdrop-blur-md rounded-xl flex flex-col justify-between hover:bg-surface-container-highest transition-all shadow-lg">
+<div class="flex items-center justify-between pb-space-sm font-label-mono-xs text-label-mono-xs">
+<span class="text-primary font-bold">PGP_VERIFIED: 0x93FA</span>
+<span class="text-outline">PEER // DISTINGUISHED</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed italic my-space-sm">
+          "Kaizen fundamentally redefined how our global team reasons about memory safety in distributed actor systems. His architectural instincts eliminate entire categories of production race conditions before code is even written."
+        </p>
+<div class="pt-space-sm flex items-center justify-between">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface font-bold text-sm">Dr. Alistair Thorne</div>
+<div class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">Distinguished Fellow, Distributed Systems Inst.</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+</div>
+</div>
+<!-- DISPATCH 02 -->
+<div class="p-space-lg bg-surface-container-high/60 backdrop-blur-md rounded-xl flex flex-col justify-between hover:bg-surface-container-highest transition-all shadow-lg">
+<div class="flex items-center justify-between pb-space-sm font-label-mono-xs text-label-mono-xs">
+<span class="text-secondary font-bold">PGP_VERIFIED: 0x48BC</span>
+<span class="text-outline">PEER // VP_ENGINEERING</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed italic my-space-sm">
+          "Finding an architect who simultaneously commands bare-metal micro-allocators and writes cutting-edge WebGPU shaders is practically unheard of. Kaizen delivers both with surgical aesthetic mastery."
+        </p>
+<div class="pt-space-sm flex items-center justify-between">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface font-bold text-sm">Elena Rostova</div>
+<div class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">VP Engineering, Quantum Vector Labs</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]">lock</span>
+</div>
+</div>
+<!-- DISPATCH 03 -->
+<div class="p-space-lg bg-surface-container-high/60 backdrop-blur-md rounded-xl flex flex-col justify-between hover:bg-surface-container-highest transition-all shadow-lg">
+<div class="flex items-center justify-between pb-space-sm font-label-mono-xs text-label-mono-xs">
+<span class="text-tertiary font-bold">PGP_VERIFIED: 0xEE12</span>
+<span class="text-outline">PEER // PRINCIPAL_RESEARCH</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed italic my-space-sm">
+          "In the world of high-frequency distributed consensus, microsecond latency claims are often marketing fiction. Kaizen is one of the only engineers whose mathematical models and live traces hold up to merciless stress audits."
+        </p>
+<div class="pt-space-sm flex items-center justify-between">
+<div>
+<div class="font-headline-md text-headline-md text-on-surface font-bold text-sm">Marcus Chen, PhD</div>
+<div class="font-label-mono-xs text-label-mono-xs text-on-surface-variant">Principal Systems Researcher, ExaCompute</div>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[20px]">lock</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================================================= -->
+<!-- 07 // DIRECT UPLINK / CLOSING CLIMAX -->
+<!-- ========================================================================= -->
+<section class="relative z-10 w-full px-space-md lg:px-space-2xl py-space-3xl flex flex-col justify-between min-h-[85vh]" id="uplink">
+<!-- HEADER -->
+<div class="flex items-center gap-space-sm">
+<span class="font-label-code text-label-code text-primary font-bold">[ 07 // UPLINK ]</span>
+<span class="h-px w-24 bg-surface-variant"></span>
+<span class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">SECURE DIRECT CHANNEL</span>
+</div>
+<!-- MAIN HERO CLIMAX TYPOGRAPHY -->
+<div class="my-space-2xl flex flex-col gap-space-md max-w-5xl">
+<span class="font-label-mono-xs text-label-mono-xs text-primary tracking-widest uppercase">READY FOR SYSTEM DEPLOYMENT</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tighter uppercase leading-none">
+        TRANSMIT SIGNAL.<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary-fixed to-secondary-fixed">BUILD THE UNPRECEDENTED.</span>
+</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        Currently reviewing selected architectural advisories, strategic advisory seats, and high-stakes greenfield systems engineering initiatives.
+      </p>
+</div>
+<!-- TACTILE INTERACTIVE CONSOLE INPUT + SOCIAL MATRIX -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-end">
+<!-- LIVE CLI INPUT FORM -->
+<div class="lg:col-span-7 p-space-xl bg-surface-container-low/90 backdrop-blur-2xl rounded-2xl shadow-2xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between font-label-mono-xs text-label-mono-xs text-outline pb-space-xs">
+<span>HOST: vance@hyperion.lab</span>
+<span>PGP: 0x94B2_88E1_C390</span>
+</div>
+<form class="flex flex-col gap-space-md" id="contact-form" onsubmit="event.preventDefault(); document.getElementById('ack-msg').classList.remove('hidden');">
+<div class="flex flex-col gap-1">
+<label class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase">&gt; ENTER YOUR PROTOCOL / TRANSMITTER ADDRESS:</label>
+<input class="bg-surface-container-lowest px-space-md py-space-sm rounded font-label-code text-label-code text-on-surface placeholder:text-outline-variant focus:outline-none focus:ring-1 focus:ring-primary transition-all" placeholder="architect@enterprise.corp or @signal.id" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase">&gt; TRANSMISSION PAYLOAD (SYSTEM_SCOPE // TIMEFRAME):</label>
+<textarea class="bg-surface-container-lowest px-space-md py-space-sm rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline-variant focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none" placeholder="Outline architectural requirements, compute substrate, and timeline constraints..." required="" rows="3"></textarea>
+</div>
+<div class="flex items-center justify-between pt-space-xs">
+<button class="px-space-xl py-space-sm bg-primary text-on-primary font-body-md text-body-md font-bold rounded hover:bg-primary-fixed transition-all flex items-center gap-space-xs shadow-lg shadow-primary-container/20" type="submit">
+<span>DISPATCH TRANSMISSION</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+<span class="font-label-mono-xs text-label-mono-xs text-outline">ENC: END-TO-END</span>
+</div>
+<div class="hidden p-space-sm bg-primary/20 rounded font-label-mono-xs text-label-mono-xs text-primary flex items-center gap-space-xs" id="ack-msg">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>TRANSMISSION PACKET RECEIVED. VERIFYING PGP SIGNATURE AND ROUTING TO KAIZEN VANCE.</span>
+</div>
+</form>
+</div>
+<!-- DIRECT SECURE LINKS -->
+<div class="lg:col-span-5 flex flex-col gap-space-sm">
+<span class="font-label-mono-xs text-label-mono-xs text-outline uppercase tracking-widest">AUTHENTICATED CHANNELS</span>
+<div class="grid grid-cols-2 gap-space-sm font-label-mono-sm text-label-mono-sm">
+<a class="p-space-md bg-surface-container-high/60 hover:bg-surface-container-highest backdrop-blur-md rounded-xl transition-all flex flex-col justify-between group" href="#">
+<span class="text-outline text-[10px]">E2E PROTOCOL</span>
+<span class="text-primary font-bold group-hover:translate-x-0.5 transition-transform flex items-center justify-between">
+              SIGNAL
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</span>
+</a>
+<a class="p-space-md bg-surface-container-high/60 hover:bg-surface-container-highest backdrop-blur-md rounded-xl transition-all flex flex-col justify-between group" href="#">
+<span class="text-outline text-[10px]">CODE COMMITS</span>
+<span class="text-on-surface font-bold group-hover:translate-x-0.5 transition-transform flex items-center justify-between">
+              GITHUB
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</span>
+</a>
+<a class="p-space-md bg-surface-container-high/60 hover:bg-surface-container-highest backdrop-blur-md rounded-xl transition-all flex flex-col justify-between group" href="#">
+<span class="text-outline text-[10px]">CRYPTOGRAPHIC KEY</span>
+<span class="text-secondary font-bold group-hover:translate-x-0.5 transition-transform flex items-center justify-between">
+              KEYBASE
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</span>
+</a>
+<a class="p-space-md bg-surface-container-high/60 hover:bg-surface-container-highest backdrop-blur-md rounded-xl transition-all flex flex-col justify-between group" href="#">
+<span class="text-outline text-[10px]">SIGNAL DISPATCH</span>
+<span class="text-tertiary font-bold group-hover:translate-x-0.5 transition-transform flex items-center justify-between">
+              X / TWITTER
+              <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</span>
+</a>
+</div>
+<div class="mt-space-md p-space-sm bg-surface-container rounded-lg font-label-mono-xs text-label-mono-xs text-on-surface-variant flex items-center justify-between">
+<span>SYS_CLOCK: SYNCHRONIZED</span>
+<span class="text-primary font-bold">SHA: 8A10_F993</span>
+</div>
+</div>
+</div>
+<!-- FOOTER SIGNATURE STRIP -->
+<div class="pt-space-3xl flex flex-wrap items-center justify-between gap-space-md text-on-surface-variant font-label-mono-xs text-label-mono-xs">
+<div>© 2025 KAIZEN VANCE // ALL REPRODUCTIONS GOVERNED BY APACHE 2.0 / MIT</div>
+<div class="flex items-center gap-space-md">
+<span>RENDERED WITH ZERO COOKIES</span>
+<span class="text-surface-bright">/</span>
+<span class="text-primary">LAT: 37.7749° N</span>
+</div>
+</div>
+</section>
+</div></main></div><div class="fixed bottom-space-md left-1/2 -translate-x-1/2 z-50 pointer-events-auto"><div class="flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-high/90 backdrop-blur-2xl shadow-[0_0_30px_-5px_rgba(245,158,11,0.15)]"><nav class="flex items-center gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-bold rounded-full"><a aria-current="page" class="px-space-sm py-space-xs transition-colors tracking-widest bg-primary-container text-on-primary-container font-bold rounded-full" data-path="index" href="#">[INDEX]</a><a class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface transition-colors tracking-widest" data-path="selected-work" href="#">[SELECTED WORK]</a><a class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface transition-colors tracking-widest" data-path="system-log" href="#">[SYSTEM LOG]</a><a class="px-space-sm py-space-xs font-label-mono-sm text-label-mono-sm text-on-surface-variant hover:text-on-surface transition-colors tracking-widest" data-path="establish-link" href="#">[ESTABLISH LINK]</a></nav></div></div></body></html>
