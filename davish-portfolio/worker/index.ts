@@ -64,7 +64,7 @@ ${profile.journey.map(j => `- ${j.year}: ${j.title} (${j.description})`).join('\
       contents: history
     };
 
-    const MODEL = "gemini-3.5-flash";
+    const MODEL = "gemini-3.6-flash";
     const MAX_RETRIES = 3;
     const RETRY_DELAY_MS = 1500;
     const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
