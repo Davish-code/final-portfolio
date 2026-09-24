@@ -64,51 +64,42 @@ ${profile.journey.map(j => `- ${j.year}: ${j.title} (${j.description})`).join('\
       contents: history
     };
 
-    const MODELS = [
-      "gemini-3.5-flash-lite",
-      "gemini-3.6-flash",
-      "gemini-3.5-flash",
-      "gemini-3.7-flash",
-    ];
-
+    const MODEL = "gemini-3.6-flash";
     const MAX_RETRIES = 3;
     const RETRY_DELAY_MS = 1500;
-
     const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-    for (const model of MODELS) {
-      for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
-        try {
-          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-            method: "POST",
-            headers: {
-              "x-goog-api-key": env.GEMINI_API_KEY,
-              "Content-Type": "application/json"
-            },
-            body: JSON.stringify(apiBody)
-          });
+    for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+      try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`, {
+          method: "POST",
+          headers: {
+            "x-goog-api-key": env.GEMINI_API_KEY,
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(apiBody)
+        });
 
-          if (response.ok) {
-            const data = await response.json() as any;
-            const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
-            return new Response(JSON.stringify({ reply }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-          }
-
-          // If 503 (overloaded), retry after a delay
-          if (response.status === 503) {
-            await delay(RETRY_DELAY_MS * (attempt + 1));
-            continue;
-          }
-
-          // 429 (rate limit) or other errors — skip to next model
-          break;
-        } catch {
-          break;
+        if (response.ok) {
+          const data = await response.json() as any;
+          const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
+          return new Response(JSON.stringify({ reply }), { status: 200, headers: { 'Content-Type': 'application/json' } });
         }
+
+        if (response.status === 503 || response.status === 429) {
+          await delay(RETRY_DELAY_MS * (attempt + 1));
+          continue;
+        }
+
+        // Other errors — stop retrying
+        const errorText = await response.text();
+        return new Response(JSON.stringify({ error: "Gemini API error", details: errorText }), { status: response.status, headers: { 'Content-Type': 'application/json' } });
+      } catch {
+        await delay(RETRY_DELAY_MS);
+        continue;
       }
     }
 
-    // All models and retries exhausted
     return new Response(JSON.stringify({ reply: "Sorry, limit has reached. I'm currently on a free tier. Please try again later." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
 
   } catch (err: any) {
