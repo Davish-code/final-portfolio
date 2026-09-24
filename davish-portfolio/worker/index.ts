@@ -11,6 +11,17 @@ export default {
     if (request.method === 'POST' && url.pathname === '/api/chat') {
       return handleChat(request, env);
     }
+    // Debug endpoint — remove after testing
+    if (url.pathname === '/api/test') {
+      const testBody = { contents: [{ role: 'user', parts: [{ text: 'say hello' }] }] };
+      const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent', {
+        method: 'POST',
+        headers: { 'x-goog-api-key': env.GEMINI_API_KEY, 'Content-Type': 'application/json' },
+        body: JSON.stringify(testBody)
+      });
+      const t = await r.text();
+      return new Response(JSON.stringify({ status: r.status, keyLength: env.GEMINI_API_KEY?.length, keyStart: env.GEMINI_API_KEY?.substring(0, 6), body: t }), { headers: { 'Content-Type': 'application/json' } });
+    }
     // @ts-ignore
     return env.ASSETS.fetch(request);
   },
@@ -71,10 +82,9 @@ ${profile.journey.map(j => `- ${j.year}: ${j.title} (${j.description})`).join('\
 
     for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
       try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`, {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${env.GEMINI_API_KEY}`, {
           method: "POST",
           headers: {
-            "x-goog-api-key": env.GEMINI_API_KEY,
             "Content-Type": "application/json"
           },
           body: JSON.stringify(apiBody)
@@ -91,9 +101,11 @@ ${profile.journey.map(j => `- ${j.year}: ${j.title} (${j.description})`).join('\
           continue;
         }
 
-        // Other errors — stop retrying
+        // Other errors — stop retrying, include full error for debugging
         const errorText = await response.text();
-        return new Response(JSON.stringify({ error: "Gemini API error", details: errorText }), { status: response.status, headers: { 'Content-Type': 'application/json' } });
+        let errorDetails = errorText;
+        try { errorDetails = JSON.parse(errorText)?.error?.message || errorText; } catch {}
+        return new Response(JSON.stringify({ error: "Gemini API error", details: errorDetails, statusCode: response.status }), { status: response.status, headers: { 'Content-Type': 'application/json' } });
       } catch {
         await delay(RETRY_DELAY_MS);
         continue;
