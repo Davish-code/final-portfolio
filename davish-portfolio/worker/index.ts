@@ -65,9 +65,9 @@ ${profile.journey.map(j => `- ${j.year}: ${j.title} (${j.description})`).join('\
     };
 
     const MODELS = [
-      "gemini-2.5-flash",
+      "gemini-3.7-flash",
+      "gemini-3.6-flash",
       "gemini-3.5-flash",
-      "gemini-3.8-flash",
     ];
 
     for (const model of MODELS) {
