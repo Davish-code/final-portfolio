@@ -65,42 +65,50 @@ ${profile.journey.map(j => `- ${j.year}: ${j.title} (${j.description})`).join('\
     };
 
     const MODELS = [
-      "gemini-3.7-flash",
+      "gemini-3.5-flash-lite",
       "gemini-3.6-flash",
       "gemini-3.5-flash",
+      "gemini-3.7-flash",
     ];
 
+    const MAX_RETRIES = 3;
+    const RETRY_DELAY_MS = 1500;
+
+    const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
     for (const model of MODELS) {
-      try {
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
-          method: "POST",
-          headers: {
-            "x-goog-api-key": env.GEMINI_API_KEY,
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(apiBody)
-        });
+      for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+        try {
+          const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
+            method: "POST",
+            headers: {
+              "x-goog-api-key": env.GEMINI_API_KEY,
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(apiBody)
+          });
 
-        if (response.ok) {
-          const data = await response.json() as any;
-          const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
-          return new Response(JSON.stringify({ reply }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+          if (response.ok) {
+            const data = await response.json() as any;
+            const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
+            return new Response(JSON.stringify({ reply }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+          }
+
+          // If 503 (overloaded), retry after a delay
+          if (response.status === 503) {
+            await delay(RETRY_DELAY_MS * (attempt + 1));
+            continue;
+          }
+
+          // 429 (rate limit) or other errors — skip to next model
+          break;
+        } catch {
+          break;
         }
-
-        // If rate limited or overloaded, try next model
-        if (response.status === 429 || response.status === 503) {
-          continue;
-        }
-
-        // For other errors (400, 404, etc.), also try next model
-        continue;
-      } catch {
-        // Network error, try next model
-        continue;
       }
     }
 
-    // All models failed
+    // All models and retries exhausted
     return new Response(JSON.stringify({ reply: "Sorry, limit has reached. I'm currently on a free tier. Please try again later." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
 
   } catch (err: any) {
