@@ -18,16 +18,21 @@ export default {
 async function handleChat(request: Request, env: Env): Promise<Response> {
   try {
     const body = await request.json() as { history?: any[] };
-    const history = body.history;
+    const rawHistory = body.history;
     
-    if (!history || history.length === 0) {
+    if (!rawHistory || rawHistory.length === 0) {
       return new Response(JSON.stringify({ error: "History cannot be empty." }), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
     
-    const latestUserMessage = history[history.length - 1]?.parts?.[0]?.text || "";
+    const latestUserMessage = rawHistory[rawHistory.length - 1]?.parts?.[0]?.text || "";
     if (latestUserMessage.length > 500) {
       return new Response(JSON.stringify({ error: "Message exceeds 500 characters." }), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
+
+    // Gemini API requires the first message to have role "user".
+    // Filter out the initial AI greeting so the history always starts with a user message.
+    const firstUserIndex = rawHistory.findIndex((m: any) => m.role === 'user');
+    const history = firstUserIndex >= 0 ? rawHistory.slice(firstUserIndex) : rawHistory;
 
     const SYSTEM_PROMPT = `You are an AI assistant embedded in Davish Talreja's personal portfolio. 
 Your ONLY purpose is to answer questions about Davish Talreja using the provided profile data.
@@ -59,21 +64,15 @@ ${profile.journey.map(j => `- ${j.year}: ${j.title} (${j.description})`).join('\
       contents: history
     };
 
-    const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent", {
-      method: "POST",
-      headers: {
-        "x-goog-api-key": env.GEMINI_API_KEY,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(apiBody)
-    });
+    const MODELS = [
+      "gemini-2.5-flash",
+      "gemini-3.5-flash",
+      "gemini-3.8-flash",
+    ];
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      
-      // Fallback in case of 503 (high demand) or 404 (model not found) or 429 (rate limit)
-      if (response.status === 503 || response.status === 404 || response.status === 429) {
-        const fallbackResponse = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent", {
+    for (const model of MODELS) {
+      try {
+        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
           method: "POST",
           headers: {
             "x-goog-api-key": env.GEMINI_API_KEY,
@@ -81,31 +80,28 @@ ${profile.journey.map(j => `- ${j.year}: ${j.title} (${j.description})`).join('\
           },
           body: JSON.stringify(apiBody)
         });
-        
-        if (fallbackResponse.ok) {
-           const fallbackData = await fallbackResponse.json() as any;
-           const reply = fallbackData.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
-           return new Response(JSON.stringify({ reply }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-        }
-        
-        // If fallback also hits rate limits or demand
-        if (fallbackResponse.status === 429 || fallbackResponse.status === 503) {
-          return new Response(JSON.stringify({ reply: "Sorry, limit has reached. I'm currently on a free tier." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-        }
-      }
 
-      // If primary model hit limit and no fallback worked
-      if (response.status === 429 || response.status === 503) {
-        return new Response(JSON.stringify({ reply: "Sorry, limit has reached. I'm currently on a free tier." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
-      }
+        if (response.ok) {
+          const data = await response.json() as any;
+          const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
+          return new Response(JSON.stringify({ reply }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+        }
 
-      return new Response(JSON.stringify({ error: "Gemini API error", details: errorText }), { status: response.status, headers: { 'Content-Type': 'application/json' } });
+        // If rate limited or overloaded, try next model
+        if (response.status === 429 || response.status === 503) {
+          continue;
+        }
+
+        // For other errors (400, 404, etc.), also try next model
+        continue;
+      } catch {
+        // Network error, try next model
+        continue;
+      }
     }
 
-    const data = await response.json() as any;
-    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated.";
-
-    return new Response(JSON.stringify({ reply }), { status: 200, headers: { 'Content-Type': 'application/json' } });
+    // All models failed
+    return new Response(JSON.stringify({ reply: "Sorry, limit has reached. I'm currently on a free tier. Please try again later." }), { status: 200, headers: { 'Content-Type': 'application/json' } });
 
   } catch (err: any) {
     return new Response(JSON.stringify({ error: "Internal server error", details: err.message }), { status: 500, headers: { 'Content-Type': 'application/json' } });
