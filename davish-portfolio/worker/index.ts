@@ -15,7 +15,6 @@ export default {
     return env.ASSETS.fetch(request);
   },
 };
-
 async function handleChat(request: Request, env: Env): Promise<Response> {
   try {
     const body = await request.json() as { history?: any[] };
