@@ -63,6 +63,10 @@ export function Hero() {
               <a href={profile.socials.twitter} target="_blank" rel="noopener noreferrer" className="w-10 h-10 flex items-center justify-center rounded bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface transition-all">
                 <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
               </a>
+              <a href="/assets/Davish_Talreja_Resume.pdf" download="Davish_Talreja_Resume.pdf" className="h-10 px-4 flex items-center justify-center rounded bg-surface-container-high/80 hover:bg-surface-container-highest text-on-surface font-label-mono-sm text-label-mono-sm uppercase tracking-widest transition-all gap-2 ml-2">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Resume
+              </a>
             </div>
           </div>
         </div>
