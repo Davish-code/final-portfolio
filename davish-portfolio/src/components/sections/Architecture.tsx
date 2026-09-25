@@ -32,7 +32,7 @@ export function Architecture() {
           </div>
           <div className="p-space-md md:p-space-lg bg-surface-container-low/80 backdrop-blur-md rounded-xl border border-surface-container flex flex-col gap-space-xs col-span-2">
             <span className="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface font-bold">{profile.stats.yearsCoding}+</span>
-            <span className="font-label-mono-xs md:font-label-mono-sm text-label-mono-xs md:text-label-mono-sm text-on-surface-variant uppercase tracking-widest">Years Experience</span>
+            <span className="font-label-mono-xs md:font-label-mono-sm text-label-mono-xs md:text-label-mono-sm text-on-surface-variant uppercase tracking-widest">Years Coding</span>
           </div>
         </div>
       </div>
