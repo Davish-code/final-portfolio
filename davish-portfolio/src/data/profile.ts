@@ -1,7 +1,7 @@
 export const profile = {
   name: "Davish Talreja",
   roles: ["B.Tech ECE Student", "Developer", "AI Enthusiast"],
-  bio: `B.Tech Electronics & Communication Engineering student with a passion for 
+  bio: `B.Tech Electronics & Communication Engineering student at VIT AP University with a passion for 
 technology that spans both hardware and software. From designing digital circuits 
 in Verilog to building intelligent AI models and full-stack web applications, 
 I love turning ideas into reality. My interdisciplinary skill set bridges hardware 
@@ -12,7 +12,7 @@ design and software development.`,
     yearsCoding: 3,
   },
   location: "India",
-  email: "davishtalreja13@gmail.com",
+  email: "davishtalreja@gmail.com",
   socials: {
     github: "https://github.com/Davish-code",
     linkedin: "https://www.linkedin.com/in/davish-talreja-ba1bb0230/",
