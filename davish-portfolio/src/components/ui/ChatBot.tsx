@@ -64,13 +64,28 @@ export function ChatBot({ className }: { className?: string }) {
         parts: [{ text: m.content }]
       }));
 
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ history })
-      });
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 22000);
+
+      let response: Response;
+      try {
+        response = await fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ history }),
+          signal: controller.signal
+        });
+      } finally {
+        clearTimeout(timeoutId);
+      }
       
-      const data = await response.json();
+      const rawText = await response.text();
+      let data: any = {};
+      try {
+        data = JSON.parse(rawText);
+      } catch {
+        data = { error: response.ok ? rawText : `Network response was not JSON (HTTP ${response.status})` };
+      }
       
       if (!response.ok) {
         let errorMsg = data.error || "Failed to fetch response";
@@ -96,10 +111,13 @@ export function ChatBot({ className }: { className?: string }) {
       setTypingId(newAiMsgId);
     } catch (error: any) {
       const errorMsgId = Date.now().toString();
+      const isTimeout = error.name === 'AbortError';
       setMessages(prev => [...prev, {
         id: errorMsgId,
         role: 'ai',
-        content: `[ERROR] Connection failed: ${error.message}`
+        content: isTimeout
+          ? "[SYSTEM NOTICE] Request timed out. The network connection is slow. Please try again."
+          : `[ERROR] Connection failed: ${error.message}`
       }]);
       setTypingId(errorMsgId);
     } finally {
