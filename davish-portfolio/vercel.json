@@ -1,8 +1,13 @@
 {
+  "outputDirectory": "dist/client",
   "rewrites": [
     {
       "source": "/api/chat",
       "destination": "https://final-portfolio.davishtalreja.workers.dev/api/chat"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
