@@ -8,8 +8,24 @@ export interface Env {
 export default {
   async fetch(request: Request, env: Env, ctx: any): Promise<Response> {
     const url = new URL(request.url);
-    if (request.method === 'POST' && url.pathname === '/api/chat') {
-      return handleChat(request, env);
+
+    if (url.pathname === '/api/chat') {
+      if (request.method === 'OPTIONS') {
+        return new Response(null, {
+          status: 204,
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type',
+          }
+        });
+      }
+      if (request.method === 'POST') {
+        const res = await handleChat(request, env);
+        const headers = new Headers(res.headers);
+        headers.set('Access-Control-Allow-Origin', '*');
+        return new Response(res.body, { status: res.status, headers });
+      }
     }
     // Debug endpoint — remove after testing
     if (url.pathname === '/api/test') {

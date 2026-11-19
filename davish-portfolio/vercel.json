@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/chat",
+      "destination": "https://final-portfolio.davishtalreja.workers.dev/api/chat"
+    }
+  ]
+}
