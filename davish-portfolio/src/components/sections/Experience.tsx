@@ -45,7 +45,7 @@ export function Experience() {
 
         {/* Timeline Items (experiencesData is ordered top = current / recent, bottom = earlier) */}
         <div className="flex flex-col gap-space-xl lg:gap-space-2xl">
-          {experiencesData.map((exp, idx) => {
+          {experiencesData.map((exp) => {
             const isLatest = exp.isCurrent;
 
             return (
