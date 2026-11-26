@@ -6,7 +6,7 @@ export function SelectedWork() {
       <div className="flex flex-wrap items-end justify-between gap-space-md mb-space-2xl">
         <div className="flex flex-col gap-space-xs">
           <div className="flex items-center gap-space-sm">
-            <span className="font-label-code text-label-code text-primary font-bold">[ 02 // ARTIFACTS ]</span>
+            <span className="font-label-code text-label-code text-primary font-bold">[ 03 // ARTIFACTS ]</span>
             <span className="h-px w-24 bg-surface-variant"></span>
             <span className="font-label-mono-xs text-label-mono-xs text-on-surface-variant uppercase tracking-widest">SELECTED CODEBASES</span>
           </div>

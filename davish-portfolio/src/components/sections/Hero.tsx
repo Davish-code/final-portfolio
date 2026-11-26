@@ -82,7 +82,7 @@ export function Hero() {
           <span className="hidden sm:inline font-label-mono-xs text-label-mono-xs text-outline">|</span>
           <span className="hidden sm:inline font-label-mono-xs text-label-mono-xs">DISPATCH LOG ACTIVE</span>
         </div>
-        <a href="#projects" className="flex items-center gap-space-xs font-label-mono-xs text-label-mono-xs text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">
+        <a href="#architecture" className="flex items-center gap-space-xs font-label-mono-xs text-label-mono-xs text-on-surface-variant hover:text-primary transition-colors tracking-widest uppercase">
           <span>[SCROLL_DOWN // 01 ➔ 07]</span>
           <span className="text-primary text-[14px] animate-bounce">⟡</span>
         </a>

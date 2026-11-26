@@ -3,8 +3,8 @@ import { cn } from '../../utils/cn';
 
 const NAV_ITEMS = [
   { id: 'hero', label: '01 // INDEX' },
-  { id: 'projects', label: '02 // PROJECTS' },
-  { id: 'architecture', label: '03 // ABOUT ME' },
+  { id: 'architecture', label: '02 // ABOUT ME' },
+  { id: 'projects', label: '03 // PROJECTS' },
   { id: 'neural-kernels', label: '04 // TECH STACKS' },
   { id: 'achievements', label: '05 // ACHIEVEMENTS' },
   { id: 'system-log', label: '06 // JOURNEY' },

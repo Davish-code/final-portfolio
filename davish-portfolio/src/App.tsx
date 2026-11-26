@@ -51,8 +51,8 @@ function App() {
           </div>
 
           <Hero />
-          <SelectedWork />
           <Architecture />
+          <SelectedWork />
           <NeuralKernels />
           <Achievements />
           <SystemLog />

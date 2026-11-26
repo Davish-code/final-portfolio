@@ -1,7 +1,7 @@
 const NAV_ITEMS = [
   { id: 'hero', icon: 'home', label: 'INDEX' },
-  { id: 'projects', icon: 'folder', label: 'WORK' },
   { id: 'architecture', icon: 'account_tree', label: 'ARCH' },
+  { id: 'projects', icon: 'folder', label: 'WORK' },
   { id: 'neural-kernels', icon: 'psychology', label: 'NEURAL' },
   { id: 'achievements', icon: 'emoji_events', label: 'AWARDS' },
 ];
