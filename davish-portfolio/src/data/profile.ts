@@ -8,7 +8,7 @@ I love turning ideas into reality. My interdisciplinary skill set bridges hardwa
 design and software development.`,
   stats: {
     projects: 4,
-    technologies: 8,
+    technologies: 25,
     yearsCoding: 3,
   },
   location: "India",
@@ -19,8 +19,11 @@ design and software development.`,
     twitter: "https://x.com/DavishTalr53045",
   },
   skills: [
-    "Python", "Java", "Web Development", "Artificial Intelligence",
-    "Verilog / HDL", "MATLAB", "Circuit Design (KiCad)", "Flutter",
+    "Python", "Java", "Embedded C", "C++", "HTML/CSS", "OpenCV", "NumPy", "Tailwind CSS",
+    "MySQL", "Firebase", "Supabase", "SQLite3",
+    "Verilog", "PCB Design", "Microcontrollers (ESP32, Arduino)", "Sensors", "ARM Cortex M3 (LPC1768)",
+    "MATLAB", "KiCad", "Vivado (FPGA)", "Multisim", "Git/GitHub", "Keil Micro-Vision",
+    "Signal Denoising & AI Adaptive Modelling", "Adaptive Signal Filters"
   ],
   projects: [
     {
