@@ -41,7 +41,7 @@ export function Achievements() {
   const coursesCount = achievementsData.filter(i => i.category === 'courses').length;
 
   return (
-    <section id="achievements" className="relative z-10 w-full px-space-md lg:px-space-2xl py-space-xl lg:py-space-3xl border-t border-surface-container bg-surface-container-lowest/60 backdrop-blur-xl">
+    <section id="achievements" className="relative z-10 w-full px-space-md lg:px-space-2xl py-space-xl lg:py-space-3xl border-t border-surface-container">
       {/* Section Header */}
       <div className="flex flex-wrap items-end justify-between gap-space-md mb-space-lg lg:mb-space-2xl">
         <div className="flex flex-col gap-space-xs">
@@ -56,7 +56,7 @@ export function Achievements() {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-space-xs p-1 bg-surface-container-low/90 backdrop-blur-md rounded-lg border border-surface-container">
+        <div className="flex flex-wrap items-center gap-space-xs p-1 bg-surface-container-low/70 backdrop-blur-md rounded-lg border border-surface-container">
           <button
             onClick={() => setActiveFilter('all')}
             className={cn(
@@ -115,7 +115,7 @@ export function Achievements() {
             <div
               key={item.id}
               onClick={() => setSelectedCert(item)}
-              className="group cursor-pointer p-space-md lg:p-space-lg bg-surface-container-low/80 hover:bg-surface-container-high/80 backdrop-blur-xl rounded-2xl border border-surface-container hover:border-primary/40 transition-all duration-300 flex flex-col justify-between shadow-xl relative overflow-hidden"
+              className="group cursor-pointer p-space-md lg:p-space-lg bg-surface-container-low/60 hover:bg-surface-container-high/70 backdrop-blur-md rounded-2xl border border-surface-container hover:border-primary/40 transition-all duration-300 flex flex-col justify-between shadow-xl relative overflow-hidden"
             >
               {/* Glowing accent bar on left */}
               <div className={cn("absolute top-0 left-0 w-1.5 h-full transition-all duration-300", isHackathon ? "bg-amber-400 group-hover:w-2" : "bg-primary/80 group-hover:w-2")}></div>
