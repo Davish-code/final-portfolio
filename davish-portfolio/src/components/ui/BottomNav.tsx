@@ -2,8 +2,9 @@ const NAV_ITEMS = [
   { id: 'hero', icon: 'home', label: 'INDEX' },
   { id: 'architecture', icon: 'account_tree', label: 'ARCH' },
   { id: 'projects', icon: 'folder', label: 'WORK' },
-  { id: 'neural-kernels', icon: 'psychology', label: 'NEURAL' },
+  { id: 'neural-kernels', icon: 'psychology', label: 'TECH' },
   { id: 'achievements', icon: 'emoji_events', label: 'AWARDS' },
+  { id: 'experience', icon: 'work', label: 'EXP' },
 ];
 
 export function BottomNav() {

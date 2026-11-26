@@ -6,7 +6,7 @@ export function EstablishLink() {
       <div className="flex flex-wrap items-end justify-between gap-space-md mb-space-lg lg:mb-space-2xl">
         <div className="flex flex-col gap-space-xs">
           <div className="flex items-center gap-space-sm">
-            <span className="font-label-code text-label-code text-primary font-bold">[ 07 // ESTABLISH LINK ]</span>
+            <span className="font-label-code text-label-code text-primary font-bold">[ 08 // ESTABLISH LINK ]</span>
             <span className="h-px w-24 bg-surface-variant"></span>
           </div>
           <h2 className="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface font-extrabold tracking-tight">

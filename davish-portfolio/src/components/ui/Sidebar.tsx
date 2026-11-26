@@ -7,8 +7,9 @@ const NAV_ITEMS = [
   { id: 'projects', label: '03 // PROJECTS' },
   { id: 'neural-kernels', label: '04 // TECH STACKS' },
   { id: 'achievements', label: '05 // ACHIEVEMENTS' },
-  { id: 'system-log', label: '06 // JOURNEY' },
-  { id: 'establish-link', label: '07 // CONTACT' },
+  { id: 'experience', label: '06 // EXPERIENCE' },
+  { id: 'system-log', label: '07 // JOURNEY' },
+  { id: 'establish-link', label: '08 // CONTACT' },
 ];
 
 export function Sidebar() {
