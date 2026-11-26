@@ -8,7 +8,7 @@ export function EstablishLink() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [feedback, setFeedback] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim() || !message.trim()) {
       setStatus('error');
@@ -25,31 +25,54 @@ export function EstablishLink() {
     }
 
     setStatus('sending');
-    setFeedback('Encrypting dispatch packet and routing transmission...');
+    setFeedback('Encrypting dispatch and transmitting directly to davishtalreja@gmail.com...');
 
-    // Simulate encrypted transmission delay, then trigger mailto client & show confirmation
-    setTimeout(() => {
-      try {
-        const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(`Portfolio Dispatch from ${email.trim()}`)}&body=${encodeURIComponent(`Sender: ${email.trim()}\n\nMessage:\n${message.trim()}\n\n---\nTransmitted via Davish Talreja Portfolio Console`)}`;
-        
-        // Open user's default email client with pre-filled content
-        window.open(mailtoUrl, '_blank');
-        
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/davishtalreja@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          message: message.trim(),
+          _subject: `New Portfolio Transmission from ${email.trim()}`,
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+
+      const data = await response.json();
+
+      if (data.message && data.message.toLowerCase().includes('activation')) {
         setStatus('success');
-        setFeedback('Transmission packet delivered. Dispatch routed to Davish Talreja.');
+        setFeedback('Initial Activation Notice: FormSubmit sent an "Activate Form" link to davishtalreja@gmail.com. Click it once to activate direct delivery!');
+        setEmail('');
+        setMessage('');
+        return;
+      }
+
+      if (response.ok && (data.success === "true" || data.success === true || data.message)) {
+        setStatus('success');
+        setFeedback('Transmission delivered successfully! Email routed directly to davishtalreja@gmail.com.');
         setEmail('');
         setMessage('');
 
-        // Reset status back to idle after 6 seconds
         setTimeout(() => {
           setStatus('idle');
           setFeedback('');
-        }, 6000);
-      } catch {
-        setStatus('error');
-        setFeedback('Network protocol failed. Please contact davishtalreja@gmail.com directly.');
+        }, 8000);
+      } else {
+        throw new Error(data.message || 'Transmission failed');
       }
-    }, 1400);
+    } catch (err: unknown) {
+      const errMsg = err instanceof Error ? err.message : 'Network error';
+      setStatus('error');
+      setFeedback(`Direct transmission notice: ${errMsg}. Opening fallback email client...`);
+      const mailtoUrl = `mailto:${profile.email}?subject=${encodeURIComponent(`Portfolio Message from ${email.trim()}`)}&body=${encodeURIComponent(message.trim())}`;
+      window.open(mailtoUrl, '_blank');
+    }
   };
 
   return (
