@@ -26,7 +26,7 @@ export function Sidebar() {
     };
 
     const observerOptions = {
-      rootMargin: '-20% 0px -60% 0px',
+      rootMargin: '-15% 0px -40% 0px',
       threshold: 0
     };
 

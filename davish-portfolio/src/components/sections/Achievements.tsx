@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { achievementsData, type Achievement } from '../../data/achievements';
 import { cn } from '../../utils/cn';
 
@@ -7,8 +8,13 @@ type FilterCategory = 'all' | 'hackathons' | 'courses';
 export function Achievements() {
   const [activeFilter, setActiveFilter] = useState<FilterCategory>('all');
   const [selectedCert, setSelectedCert] = useState<Achievement | null>(null);
+  const [mounted, setMounted] = useState(false);
 
-  // Close modal on Escape key press
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Close modal on Escape key press and prevent background scrolling
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -203,26 +209,26 @@ export function Achievements() {
         })}
       </div>
 
-      {/* Interactive Certificate Lightbox Modal */}
-      {selectedCert && (
+      {/* Interactive Certificate Lightbox Modal mounted directly to document.body */}
+      {selectedCert && mounted && createPortal(
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-space-sm sm:p-space-md lg:p-space-xl bg-black/85 backdrop-blur-2xl animate-in fade-in duration-200"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-5 md:p-8 bg-black/90 backdrop-blur-xl animate-in fade-in duration-200"
           onClick={() => setSelectedCert(null)}
           data-lenis-prevent="true"
         >
           <div 
-            className="relative w-full max-w-4xl max-h-[92vh] bg-surface-container-low border border-surface-container-high rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200"
+            className="relative w-full max-w-5xl max-h-[94vh] bg-surface-container-low border border-surface-container-high rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Top Bar */}
-            <div className="flex items-center justify-between px-space-md lg:px-space-lg py-space-sm bg-surface-container border-b border-surface-container-high z-10">
+            <div className="flex items-center justify-between px-space-md lg:px-space-lg py-3 bg-surface-container border-b border-surface-container-high shrink-0 z-10">
               <div className="flex items-center gap-space-xs font-label-code text-label-code text-primary">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                 <span className="font-bold tracking-wider">[ VERIFIED RECORD // {selectedCert.category.toUpperCase()} ]</span>
               </div>
               <button
                 onClick={() => setSelectedCert(null)}
-                className="px-space-sm py-1 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-mono-xs text-label-mono-xs rounded flex items-center gap-1 transition-colors"
+                className="px-space-sm py-1.5 bg-surface-container-high hover:bg-surface-container-highest text-on-surface hover:text-primary font-label-mono-xs text-label-mono-xs rounded flex items-center gap-1.5 transition-colors cursor-pointer"
                 title="Close (Esc)"
               >
                 <span>[ESC // CLOSE]</span>
@@ -231,13 +237,16 @@ export function Achievements() {
             </div>
 
             {/* Modal Scrollable Body */}
-            <div className="overflow-y-auto flex-1 p-space-md lg:p-space-xl flex flex-col gap-space-lg">
-              {/* Certificate Image Frame */}
-              <div className="relative rounded-xl overflow-hidden bg-black/50 border border-surface-container-high flex items-center justify-center shadow-inner group">
+            <div 
+              className="overflow-y-auto flex-1 p-space-md sm:p-space-lg lg:p-space-xl flex flex-col gap-space-lg [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:bg-primary/40 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-track]:bg-surface-container"
+              data-lenis-prevent="true"
+            >
+              {/* Certificate Image Frame - full aspect visible, responsive */}
+              <div className="relative rounded-xl overflow-hidden bg-black/80 border border-surface-container-high/80 p-2 sm:p-4 flex items-center justify-center shadow-2xl">
                 <img
                   src={selectedCert.image}
                   alt={selectedCert.title}
-                  className="w-full max-h-[60vh] object-contain rounded-lg"
+                  className="max-h-[50vh] sm:max-h-[56vh] w-auto max-w-full object-contain rounded-lg shadow-lg"
                 />
               </div>
 
@@ -323,7 +332,8 @@ export function Achievements() {
               </div>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );
