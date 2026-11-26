@@ -3,11 +3,11 @@ import { cn } from '../../utils/cn';
 
 const NAV_ITEMS = [
   { id: 'hero', label: '01 // INDEX' },
-  { id: 'projects', label: '02 // SELECTED WORK' },
-  { id: 'architecture', label: '03 // ARCHITECTURE' },
-  { id: 'neural-kernels', label: '04 // NEURAL KERNELS' },
-  { id: 'system-log', label: '05 // SYSTEM LOG' },
-  { id: 'establish-link', label: '06 // ESTABLISH LINK' },
+  { id: 'projects', label: '02 // PROJECTS' },
+  { id: 'architecture', label: '03 // ABOUT ME' },
+  { id: 'neural-kernels', label: '04 // TECH STACKS' },
+  { id: 'system-log', label: '05 // JOURNEY' },
+  { id: 'establish-link', label: '06 // CONTACT' },
 ];
 
 export function Sidebar() {
