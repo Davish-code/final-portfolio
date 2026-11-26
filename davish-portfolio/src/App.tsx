@@ -9,6 +9,7 @@ import { Hero } from './components/sections/Hero';
 import { SelectedWork } from './components/sections/SelectedWork';
 import { Architecture } from './components/sections/Architecture';
 import { NeuralKernels } from './components/sections/NeuralKernels';
+import { Achievements } from './components/sections/Achievements';
 import { SystemLog } from './components/sections/SystemLog';
 import { EstablishLink } from './components/sections/EstablishLink';
 
@@ -53,6 +54,7 @@ function App() {
           <SelectedWork />
           <Architecture />
           <NeuralKernels />
+          <Achievements />
           <SystemLog />
           <EstablishLink />
         </main>

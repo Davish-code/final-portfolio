@@ -3,6 +3,7 @@ const NAV_ITEMS = [
   { id: 'projects', icon: 'folder', label: 'WORK' },
   { id: 'architecture', icon: 'account_tree', label: 'ARCH' },
   { id: 'neural-kernels', icon: 'psychology', label: 'NEURAL' },
+  { id: 'achievements', icon: 'emoji_events', label: 'AWARDS' },
 ];
 
 export function BottomNav() {
