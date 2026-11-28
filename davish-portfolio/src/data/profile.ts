@@ -69,4 +69,57 @@ design and software development.`,
     { year: "2025", title: "Web Development", description: "Learned full-stack web development, building responsive websites and interactive web applications." },
     { year: "2022", title: "Started Coding Journey", description: "Began programming with Python and Java, building a strong foundation in data structures and algorithms." },
   ],
+  experiences: [
+    {
+      type: "Internship",
+      role: "AI Dataset & QA Intern",
+      organization: "Shieldnex Aerospace",
+      duration: "1st Decemeber 2026 to Present",
+      description: "",
+      skills: ["AI","Python","ML","QA","Data Labelling"],
+    },
+    {
+      type: "Technical Member",
+      role: "Technical Member",
+      organization: "IETE Student Chapter",
+      duration: "July 2026 to present",
+      description: "",
+      skills: ["IOT","Embedded Systems","Microcontrollers","Sensors"],
+    },
+  ],
+
+  achievements: [
+    {
+      type: "Competetion Winner with 1st Rank",
+      title: "Top Game Creator, Game On Night (1st Place)",
+      issuer: "Google Student Ambassador Program",
+      date: "25 November 2026",
+      description: "Won 1st place in a Gemini-powered game design challenge by building an original 4-player co-op game, '11:59 PM: Final_Final_v3', with Gemini and Nano Banana and pitching it in 60 seconds.",
+      tags: ["Gemini", "Nano Banana", "Game Design", "Pitching"],
+    },
+    {
+      type: "Course Completion Certificate",
+      title: "AI-Driven Adaptive Modeling & Signal Denoising",
+      issuer: "School of Electronics Engineering (SENSE), VIT-AP University",
+      date: "4 January 2026 to 23 April 2026",
+      description: "Semester-long Value Added Course on adaptive modeling and signal denoising using AI and machine learning.",
+      tags: ["Adaptive Modeling", "Signal Denoising", "Machine Learning", "DSP"],
+    },
+    {
+      type: "Course Completion Certificate",
+      title: "Digital - Certified Intelligent Data Center (O&M)",
+      issuer: "IIT Madras Pravartak",
+      date: "27 July 2026 — 14 September 2026",
+      description: "Successfully completed the rigorous certification course titled 'Digital - Certified Intelligent Data Center - O&M', conducted jointly by IITM Pravartak Technologies Foundation (Technology Innovation Hub of IIT Madras), SWAYAM Plus, and Vertiv.",
+      tags: ["Data Center", "Operations & Maintenance", "Critical Infrastructure Management", "Facility Management", "Digital Transformation", "IT Infrastructure", "Networking", "HVAC Systems", "Power Systems", "Data Center Security", "Monitoring & Analytics", "Best Practices", "Professional Development"]
+    },
+    {
+      type: "Competetion Winner with 1st Rank",
+      title: "Voice of Students — An Ideathon",
+      issuer:"IEI-CSE Club, VIT AP University",
+      date: "24 January 2025",
+      description: "Secured First Place in the university-wide 'Voice of Students – An Ideathon' organized by the Institution of Engineers (India) CSE Students' Chapter on the occasion of International Day of Education.",
+      tags: []
+    }  
+  ],
 };
