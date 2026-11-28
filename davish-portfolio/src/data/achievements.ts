@@ -99,7 +99,7 @@ export const achievementsData: Achievement[] = [
     date: "25 November 2026",
     description: "Won 1st place at Game On Night, a Gemini-powered game design challenge. Designed an original 4-player co-op game, '11:59 PM: Final_Final_v3', using Gemini for ideation and Nano Banana for the game poster, then pitched it in 60 seconds. Awarded for originality, creativity and a pitch that stood out from the crowd.",
     tags: ["Gemini", "Nano Banana", "Generative AI", "Game Design", "Prompt Engineering", "Pitching"],
-    image: "/documents/certificates/hackathons/0016_Winner_DAVISH_TALREJA_pages-to-jpg-0001.jpg",
-    featured: true
+    image: "documents/certificates/hackathons/0016_Winner_DAVISH_TALREJA_pages-to-jpg-0001.jpg",
+    featured: false
   }
 ];
