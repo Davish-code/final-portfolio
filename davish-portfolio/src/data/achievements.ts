@@ -97,9 +97,10 @@ export const achievementsData: Achievement[] = [
     issuer: "Google Student Ambassador Program",
     issuerOrg: "Google",
     date: "25 November 2026",
+    award: "1st Place Winner",
     description: "Won 1st place at Game On Night, a Gemini-powered game design challenge. Designed an original 4-player co-op game, '11:59 PM: Final_Final_v3', using Gemini for ideation and Nano Banana for the game poster, then pitched it in 60 seconds. Awarded for originality, creativity and a pitch that stood out from the crowd.",
     tags: ["Gemini", "Nano Banana", "Generative AI", "Game Design", "Prompt Engineering", "Pitching"],
-    image: "documents/certificates/hackathons/0016_Winner_DAVISH_TALREJA_pages-to-jpg-0001.jpg",
-    featured: false
+    image: "/assets/certificates/hackathons/0016_Winner_DAVISH_TALREJA_pages-to-jpg-0001.jpg",
+    featured: true
   }
 ];
