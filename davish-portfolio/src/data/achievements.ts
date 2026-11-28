@@ -87,5 +87,19 @@ export const achievementsData: Achievement[] = [
     tags: ["Adaptive Modeling", "Signal Denoising", "Machine Learning", "DSP", "VIT-AP"],
     image: "/assets/certificates/courses/vit-ap-adaptive-ai-cert.jpg",
     featured: false
+  },
+  {
+    id: "achievement-gsp-game-on-night-1st-place",
+    title: "Top Game Creator: Game On, Imagine the Impossible",
+    subtitle: "1st Place, Game On Night",
+    category: "hackathons",
+    categoryLabel: "Hackathons",
+    issuer: "Google Student Ambassador Program",
+    issuerOrg: "Google",
+    date: "25 November 2026",
+    description: "Won 1st place at Game On Night, a Gemini-powered game design challenge. Designed an original 4-player co-op game, '11:59 PM: Final_Final_v3', using Gemini for ideation and Nano Banana for the game poster, then pitched it in 60 seconds. Awarded for originality, creativity and a pitch that stood out from the crowd.",
+    tags: ["Gemini", "Nano Banana", "Generative AI", "Game Design", "Prompt Engineering", "Pitching"],
+    image: "/assets/certificates/hackathons/0016_Winner_DAVISH_TALREJA_pages-to-jpg-0001.jpg",
+    featured: true
   }
 ];
